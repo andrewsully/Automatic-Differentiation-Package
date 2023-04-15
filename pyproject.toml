@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpha-delta-team29"
+version = "1.0.2"
+description = "derivatives, chain rule, and other cool stuff"
+authors = [
+        {name="Andrew", email="andrewsullivan@g.harvard.edu"},
+        {name="Evan", email="evanarnold@college.harvard.edu"},
+        {name="James", email="jameslionus@g.harvard.edu"},
+        {name="Kane", email="kanenorman@g.harvard.edu"},
+        {name="Luke", email="lukestoner@g.harvard.edu"},
+    ]
+requires-python=">=3.10"
+license = {text = "MIT"}
+readme = "README.md"
+dependencies =["numpy"]
+
+
+[tool.setuptools]
+packages = ["autodiff_team29"]
+
+[project.optional-dependencies]
+
+test = [
+    "pytest",
+    "pytest-cov",
+    "expects"
+]

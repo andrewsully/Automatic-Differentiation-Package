@@ -1,0 +1,1794 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>autodiff_team29.elementaries API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>autodiff_team29.elementaries</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">from typing import Union
+import numpy as np
+import math
+from autodiff_team29 import Node
+
+
+def _check_log_domain_restrictions(x: Node) -&gt; None:
+    &#34;&#34;&#34;
+    Checks if the value of a given input x is less than or equal to zero and therefore
+    unable to be used as an input for a logrithmic function.
+
+    Parameters
+    ----------
+    x: Node
+
+    Returns
+    -------
+    Returns None
+        if x &gt; 0
+
+    Raises
+    ------
+    ValueError
+        if x &lt;= 0.
+
+    Examples
+    --------
+    &gt;&gt;&gt; _check_log_domain_restrictions(Node(&#34;1&#34;,1,0))
+    None
+    &gt;&gt;&gt; _check_log_domain_restrictions(Node(&#34;0&#34;,0,0))
+    ValueError: Value 0 not valid for a logarithmic function
+    &gt;&gt;&gt; _check_log_domain_restrictions(Node(&#34;-1&#34;,-1,0))
+    ValueError: Value &#39;-1&#39; not valid for a logarithmic functionNone
+
+    &#34;&#34;&#34;
+    if x.value &lt;= 0:
+        raise ValueError(f&#34;Value &#39;{x.value} &#39;not valid for a logarithmic function&#34;)
+
+
+def _check_sqrt_domain_restrictions(x: Node) -&gt; None:
+    &#34;&#34;&#34;
+    Checks if the value of a given input x is less zero and therefore
+    unable to be used as an input for a square root function.
+
+    Parameters
+    ----------
+    x : Node
+
+    Returns
+    -------
+    None
+        if x &gt;= 0
+
+    Raises
+    ------
+    ValueError
+        if x &lt; 0.
+
+    Examples
+    --------
+    &gt;&gt;&gt; _check_sqrt_domain_restrictions(Node(&#34;1&#34;,1,0))
+    None
+    &gt;&gt;&gt; _check_sqrt_domain_restrictions(Node(&#34;0&#34;,0,0))
+    None
+    &gt;&gt;&gt; _check_sqrt_domain_restrictions(Node(&#34;-1&#34;,-1,0))
+    ValueError: Square roots of negative numbers not supported
+
+    &#34;&#34;&#34;
+    if x.value &lt; 0:
+        raise ValueError(&#34;Square roots of negative numbers not supported&#34;)
+
+
+def _check_tan_domain_restrictions(x: Node) -&gt; None:
+    &#34;&#34;&#34;
+    Checks if cosine of given value is zero and thus invalid for tangent.
+
+    Parameters
+    ----------
+    x : Node
+
+    Returns
+    -------
+    None
+        if cos(x) != 0
+
+    Raises
+    ------
+    ValueError
+        if cos(x) == 0.
+
+    Examples
+    --------
+    &gt;&gt;&gt; _check_tan_domain_restrictions(Node(&#34;1&#34;,1,0))
+    None
+    &gt;&gt;&gt; _check_tan_domain_restrictions(Node(&#34;0&#34;,0,0))
+    None
+    &gt;&gt;&gt; _check_tan_domain_restrictions(Node(&#34;pi&#34;,np.pi/2,0))
+    ValueError: Value, pi/2, not within domain of tan
+
+    &#34;&#34;&#34;
+    if np.cos(x.value) == 0:
+        raise ValueError(f&#34;Value, {x.value}, not within domain of tan&#34;)
+
+
+def _check_arccos_domain_restrictions(x: Node) -&gt; None:
+    &#34;&#34;&#34;
+    Checks if the value of a given input x is not -1 ≤ x ≤ 1 therefore
+    unable to be used as an input for the arccos function.
+
+    Parameters
+    ----------
+    x : Node
+
+    Returns
+    -------
+    None
+        if -1 ≤ x ≤ 1
+
+    Raises
+    ------
+    ValueError
+        if |x| &gt; 1.
+
+    Examples
+    --------
+    &gt;&gt;&gt; _check_arccos_domain_restrictions(Node(&#34;1&#34;,1,0))
+    None
+    &gt;&gt;&gt; _check_arccos_domain_restrictions(Node(&#34;0&#34;,0,0))
+    None
+    &gt;&gt;&gt; _check_arccos_domain_restrictions(Node(&#34;-5&#34;,-1,0))
+    ValueError: &#39;-5&#39; is not within the domain [-1,1] of f(x)=arccos(x)
+
+    &#34;&#34;&#34;
+    if np.abs(x.value) &gt; 1:
+        raise ValueError(
+            f&#34;&#39;{x.value}&#39; is not within the domain [-1,1] of f(x)=arccos(x)&#34;
+        )
+
+
+def _check_arcsin_domain_restrictions(x: Node) -&gt; None:
+    &#34;&#34;&#34;
+    Checks if the value of a given input x is not -1 ≤ x ≤ 1 and therefore
+    unable to be used as an input for the arcsin function.
+
+    Parameters
+    ----------
+    x : Node
+
+    Returns
+    -------
+    None
+        if -1 ≤ x ≤ 1
+
+    Raises
+    ------
+    ValueError
+        if x &lt; 0.
+
+    Examples
+    --------
+    &gt;&gt;&gt; _check_arcsin_domain_restrictions(Node(&#34;1&#34;,1,0))
+    None
+    &gt;&gt;&gt; _check_arcsin_domain_restrictions(Node(&#34;0&#34;,0,0))
+    None
+    &gt;&gt;&gt; _check_arcsin_domain_restrictions(Node(&#34;-5&#34;,-1,0))
+    ValueError: &#39;-5&#39; is not within the domain [-1,1] of f(x)=arcsin(x)
+    &#34;&#34;&#34;
+    if np.abs(x.value) &gt; 1:
+        raise ValueError(f&#34;{x.value} is not within the domain [-1,1] of f(x)=arcsin(x)&#34;)
+
+
+def sqrt(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based of the square
+    root of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; sqrt(Node(&#34;1&#34;,1,0))
+    Node(&#34;sqrt(1)&#34;, 1, 0)
+    &gt;&gt;&gt; sqrt(Node(&#34;0&#34;,0,0))
+    Node(&#34;sqrt(0)&#34;, 0, 0)
+    &gt;&gt;&gt; sqrt(Node(&#34;-1&#34;,-1,0))
+    ValueError: Square roots of negative numbers not supported
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;sqrt({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_sqrt_domain_restrictions(x)
+
+    forward_trace = np.sqrt(x.value)
+    tangent_trace = x.derivative / (2 * np.sqrt(x.value))
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def ln(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the natural log
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; ln(Node(&#34;1&#34;,1,0))
+    Node(&#34;ln(1)&#34;, 0, 1)
+    &gt;&gt;&gt; ln(Node(&#34;0&#34;,0,0))
+    ValueError: Value 0 not valid for a logarithmic function
+    &gt;&gt;&gt; ln(-1)
+    ValueError: Value &#39;-1&#39; not valid for a logarithmic functionNone
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;ln({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_log_domain_restrictions(x)
+
+    forward_trace = np.log(x.value)
+    tangent_trace = 1 / x.value
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def log(x: Union[int, float, Node], base: Union[int, float, Node] = np.e) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the logarithm
+    of the input node x and the provided base.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    base : Union[int, float]
+        The desired base of the logorithm. Must be an integer or float greater than 1.
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; log(Node(&#34;1&#34;,1,0), 10)
+    Node(&#34;log10(1)&#34;, 0, 0.4343)
+    &gt;&gt;&gt; log(Node(&#34;1&#34;,1,0), 2)
+    Node(&#34;log2(1)&#34;, 0, 1.4427)
+    &gt;&gt;&gt; log(Node(&#34;0&#34;,0,0))
+    ValueError: Value 0 not valid for a logarithmic function
+    &gt;&gt;&gt; log(Node(&#34;-1&#34;,-1,0))
+    ValueError: Value -1 not valid for a logarithmic function
+
+    &#34;&#34;&#34;
+    if not base &gt; 1:
+        raise ValueError(&#34;Base must be greater than 1&#34;)
+
+    symbolic_representation = f&#34;log{str(base)}({str(x)})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_log_domain_restrictions(x)
+
+    forward_trace = math.log(x.value, base)
+    tangent_trace = 1 / (x.value * np.log(base))
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def exp(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the exponential
+    value of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; exp(Node(&#34;1&#34;,1,0))
+    Node(&#34;exp(1)&#34;, 2.7183, 0)
+    &gt;&gt;&gt; exp(Node(&#34;0&#34;,0,0))
+    Node(&#34;exp(0)&#34;, 1, 0)
+    &gt;&gt;&gt; exp(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;exp(-1)&#34;, 0.3679, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;exp({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.exp(x.value)
+    tangent_trace = x.derivative * forward_trace
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def sin(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the sine
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; sin(Node(&#34;1&#34;,1,0))
+    Node(&#34;sin(1)&#34;, 0.8415, 0)
+    &gt;&gt;&gt; sin(Node(&#34;0&#34;,0,0))
+    Node(&#34;sin(0)&#34;, 0, 0)
+    &gt;&gt;&gt; sin(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;sin(-1)&#34;, -0.8415, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;sin({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.sin(x.value)
+    tangent_trace = np.cos(x.value) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def cos(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the cosine
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; cos(Node(&#34;1&#34;,1,0))
+    Node(&#34;cos(1)&#34;, 0.5403, 0)
+    &gt;&gt;&gt; cos(Node(&#34;0&#34;,1,0))
+    Node(&#34;cos(0)&#34;, 1, 0)
+    &gt;&gt;&gt; cos(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;cos(-1)&#34;, -0.5403, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;cos({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.cos(x.value)
+    tangent_trace = -np.sin(x.value) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def tan(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the tangent
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; tan(Node(&#34;1&#34;,1,0))
+    Node(&#34;tan(1)&#34;, 1.557, 0)
+    &gt;&gt;&gt; tan(Node(&#34;0&#34;,0,0))
+    Node(&#34;tan(0)&#34;, 0, 0)
+    &gt;&gt;&gt; tan(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;tan(-1)&#34;, -1.557, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;tan({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_tan_domain_restrictions(x)
+
+    forward_trace = np.tan(x.value)
+    tangent_trace = x.derivative / (np.cos(x.value) ** 2)
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def arcsin(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the arcsin
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; arcsin(Node(&#34;1&#34;,1,0))
+    Node(&#34;arcsin(1)&#34;, 1.5708, 0)
+    &gt;&gt;&gt; arcsin(Node(&#34;0&#34;,0,0))
+    Node(&#34;arcsin(0)&#34;, 0, 0)
+    &gt;&gt;&gt; arcsin(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;arcsin(-1)&#34;, -1.5708, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;arcsin({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_arcsin_domain_restrictions(x)
+
+    forward_trace = np.arcsin(x.value)
+    tangent_trace = x.derivative / np.sqrt(1 - x.value ** 2)
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def arccos(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the arccos
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; arccos(Node(&#34;1&#34;,1,0))
+    Node(&#34;arccos(1)&#34;, 3.1416, 0)
+    &gt;&gt;&gt; arccos(Node(&#34;0&#34;,0,0))
+    Node(&#34;arccos(0)&#34;, 1.5708, 0)
+    &gt;&gt;&gt; arccos(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;arccos(-1)&#34;, -3.1416, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;arccos({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_arccos_domain_restrictions(x)
+
+    forward_trace = np.arccos(x.value)
+    tangent_trace = -x.derivative / np.sqrt(1 - x.value ** 2)
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def arctan(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the arctan
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; arctan(Node(&#34;1&#34;,1,0))
+    Node(&#34;arctan(1)&#34;, 0.7854, 0)
+    &gt;&gt;&gt; arctan(Node(&#34;0&#34;,0,0))
+    Node(&#34;arctan(0)&#34;, 0, 0)
+    &gt;&gt;&gt; arctan(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;arctan(-1)&#34;, -0.7854, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;arctan({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.arctan(x.value)
+    tangent_trace = x.derivative / (1 + x.value ** 2)
+    new_node = Node(
+        symbolic_representation,
+        forward_trace,
+        tangent_trace,
+    )
+
+    return new_node
+
+
+def power(base: Union[int, float, Node], exponent: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the power
+    of the input node x.
+
+    Parameters
+    ----------
+    base : Union[int, float, Node]
+    exponent : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; power(3,2)
+    Node(&#34;3**2&#34;, 9, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;({base}**{exponent})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    base = Node._convert_numeric_type_to_node(base)
+
+    return base ** exponent
+
+
+def sinh(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the sinh
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+
+    Examples
+    --------
+    &gt;&gt;&gt; sinh(1)
+    Node(&#34;sinh(1)&#34;, 1.1752011936438014, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;sinh({x})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.sinh(x.value)
+    tangent_trace = np.cosh(x.value) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def cosh(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the sinh
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; cosh(1)
+    Node(&#34;cosh(1)&#34;, 1.5430806348152437, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;cosh({x})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.cosh(x.value)
+    tangent_trace = np.sinh(x.value) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def tanh(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+
+    Examples
+    --------
+    &gt;&gt;&gt; tanh(1)
+    Node(&#34;tanh(1)&#34;, 0.76159415595, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;tanh({x})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.tanh(x.value)
+    tangent_trace = (1 - np.tanh(x.value) ** 2) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node
+
+
+def logistic(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; logistic(1)
+    Node(&#34;logistic(1)&#34;, 1.1752011936438014, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;logistic({x})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.exp(-np.logaddexp(0, -x.value))
+    tangent_trace = (
+            (np.exp(-np.logaddexp(0, -x.value)))
+            * (1 - np.exp(-np.logaddexp(0, -x.value)))
+            * x.derivative
+    )
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="autodiff_team29.elementaries.arccos"><code class="name flex">
+<span>def <span class="ident">arccos</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the arccos
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; arccos(Node(&quot;1&quot;,1,0))
+Node(&quot;arccos(1)&quot;, 3.1416, 0)
+&gt;&gt;&gt; arccos(Node(&quot;0&quot;,0,0))
+Node(&quot;arccos(0)&quot;, 1.5708, 0)
+&gt;&gt;&gt; arccos(Node(&quot;-1&quot;,-1,0))
+Node(&quot;arccos(-1)&quot;, -3.1416, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def arccos(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the arccos
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; arccos(Node(&#34;1&#34;,1,0))
+    Node(&#34;arccos(1)&#34;, 3.1416, 0)
+    &gt;&gt;&gt; arccos(Node(&#34;0&#34;,0,0))
+    Node(&#34;arccos(0)&#34;, 1.5708, 0)
+    &gt;&gt;&gt; arccos(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;arccos(-1)&#34;, -3.1416, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;arccos({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_arccos_domain_restrictions(x)
+
+    forward_trace = np.arccos(x.value)
+    tangent_trace = -x.derivative / np.sqrt(1 - x.value ** 2)
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.arcsin"><code class="name flex">
+<span>def <span class="ident">arcsin</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the arcsin
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; arcsin(Node(&quot;1&quot;,1,0))
+Node(&quot;arcsin(1)&quot;, 1.5708, 0)
+&gt;&gt;&gt; arcsin(Node(&quot;0&quot;,0,0))
+Node(&quot;arcsin(0)&quot;, 0, 0)
+&gt;&gt;&gt; arcsin(Node(&quot;-1&quot;,-1,0))
+Node(&quot;arcsin(-1)&quot;, -1.5708, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def arcsin(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the arcsin
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; arcsin(Node(&#34;1&#34;,1,0))
+    Node(&#34;arcsin(1)&#34;, 1.5708, 0)
+    &gt;&gt;&gt; arcsin(Node(&#34;0&#34;,0,0))
+    Node(&#34;arcsin(0)&#34;, 0, 0)
+    &gt;&gt;&gt; arcsin(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;arcsin(-1)&#34;, -1.5708, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;arcsin({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_arcsin_domain_restrictions(x)
+
+    forward_trace = np.arcsin(x.value)
+    tangent_trace = x.derivative / np.sqrt(1 - x.value ** 2)
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.arctan"><code class="name flex">
+<span>def <span class="ident">arctan</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the arctan
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; arctan(Node(&quot;1&quot;,1,0))
+Node(&quot;arctan(1)&quot;, 0.7854, 0)
+&gt;&gt;&gt; arctan(Node(&quot;0&quot;,0,0))
+Node(&quot;arctan(0)&quot;, 0, 0)
+&gt;&gt;&gt; arctan(Node(&quot;-1&quot;,-1,0))
+Node(&quot;arctan(-1)&quot;, -0.7854, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def arctan(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the arctan
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; arctan(Node(&#34;1&#34;,1,0))
+    Node(&#34;arctan(1)&#34;, 0.7854, 0)
+    &gt;&gt;&gt; arctan(Node(&#34;0&#34;,0,0))
+    Node(&#34;arctan(0)&#34;, 0, 0)
+    &gt;&gt;&gt; arctan(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;arctan(-1)&#34;, -0.7854, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;arctan({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.arctan(x.value)
+    tangent_trace = x.derivative / (1 + x.value ** 2)
+    new_node = Node(
+        symbolic_representation,
+        forward_trace,
+        tangent_trace,
+    )
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.cos"><code class="name flex">
+<span>def <span class="ident">cos</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the cosine
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; cos(Node(&quot;1&quot;,1,0))
+Node(&quot;cos(1)&quot;, 0.5403, 0)
+&gt;&gt;&gt; cos(Node(&quot;0&quot;,1,0))
+Node(&quot;cos(0)&quot;, 1, 0)
+&gt;&gt;&gt; cos(Node(&quot;-1&quot;,-1,0))
+Node(&quot;cos(-1)&quot;, -0.5403, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cos(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the cosine
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; cos(Node(&#34;1&#34;,1,0))
+    Node(&#34;cos(1)&#34;, 0.5403, 0)
+    &gt;&gt;&gt; cos(Node(&#34;0&#34;,1,0))
+    Node(&#34;cos(0)&#34;, 1, 0)
+    &gt;&gt;&gt; cos(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;cos(-1)&#34;, -0.5403, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;cos({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.cos(x.value)
+    tangent_trace = -np.sin(x.value) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.cosh"><code class="name flex">
+<span>def <span class="ident">cosh</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the sinh
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; cosh(1)
+Node(&quot;cosh(1)&quot;, 1.5430806348152437, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def cosh(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the sinh
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; cosh(1)
+    Node(&#34;cosh(1)&#34;, 1.5430806348152437, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;cosh({x})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.cosh(x.value)
+    tangent_trace = np.sinh(x.value) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.exp"><code class="name flex">
+<span>def <span class="ident">exp</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the exponential
+value of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; exp(Node(&quot;1&quot;,1,0))
+Node(&quot;exp(1)&quot;, 2.7183, 0)
+&gt;&gt;&gt; exp(Node(&quot;0&quot;,0,0))
+Node(&quot;exp(0)&quot;, 1, 0)
+&gt;&gt;&gt; exp(Node(&quot;-1&quot;,-1,0))
+Node(&quot;exp(-1)&quot;, 0.3679, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def exp(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the exponential
+    value of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; exp(Node(&#34;1&#34;,1,0))
+    Node(&#34;exp(1)&#34;, 2.7183, 0)
+    &gt;&gt;&gt; exp(Node(&#34;0&#34;,0,0))
+    Node(&#34;exp(0)&#34;, 1, 0)
+    &gt;&gt;&gt; exp(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;exp(-1)&#34;, 0.3679, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;exp({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.exp(x.value)
+    tangent_trace = x.derivative * forward_trace
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.ln"><code class="name flex">
+<span>def <span class="ident">ln</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the natural log
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; ln(Node(&quot;1&quot;,1,0))
+Node(&quot;ln(1)&quot;, 0, 1)
+&gt;&gt;&gt; ln(Node(&quot;0&quot;,0,0))
+ValueError: Value 0 not valid for a logarithmic function
+&gt;&gt;&gt; ln(-1)
+ValueError: Value '-1' not valid for a logarithmic functionNone
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ln(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the natural log
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; ln(Node(&#34;1&#34;,1,0))
+    Node(&#34;ln(1)&#34;, 0, 1)
+    &gt;&gt;&gt; ln(Node(&#34;0&#34;,0,0))
+    ValueError: Value 0 not valid for a logarithmic function
+    &gt;&gt;&gt; ln(-1)
+    ValueError: Value &#39;-1&#39; not valid for a logarithmic functionNone
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;ln({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_log_domain_restrictions(x)
+
+    forward_trace = np.log(x.value)
+    tangent_trace = 1 / x.value
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.log"><code class="name flex">
+<span>def <span class="ident">log</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>], base: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>] = 2.718281828459045) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the logarithm
+of the input node x and the provided base.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>base</code></strong> :&ensp;<code>Union[int, float]</code></dt>
+<dd>The desired base of the logorithm. Must be an integer or float greater than 1.</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; log(Node(&quot;1&quot;,1,0), 10)
+Node(&quot;log10(1)&quot;, 0, 0.4343)
+&gt;&gt;&gt; log(Node(&quot;1&quot;,1,0), 2)
+Node(&quot;log2(1)&quot;, 0, 1.4427)
+&gt;&gt;&gt; log(Node(&quot;0&quot;,0,0))
+ValueError: Value 0 not valid for a logarithmic function
+&gt;&gt;&gt; log(Node(&quot;-1&quot;,-1,0))
+ValueError: Value -1 not valid for a logarithmic function
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def log(x: Union[int, float, Node], base: Union[int, float, Node] = np.e) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the logarithm
+    of the input node x and the provided base.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    base : Union[int, float]
+        The desired base of the logorithm. Must be an integer or float greater than 1.
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; log(Node(&#34;1&#34;,1,0), 10)
+    Node(&#34;log10(1)&#34;, 0, 0.4343)
+    &gt;&gt;&gt; log(Node(&#34;1&#34;,1,0), 2)
+    Node(&#34;log2(1)&#34;, 0, 1.4427)
+    &gt;&gt;&gt; log(Node(&#34;0&#34;,0,0))
+    ValueError: Value 0 not valid for a logarithmic function
+    &gt;&gt;&gt; log(Node(&#34;-1&#34;,-1,0))
+    ValueError: Value -1 not valid for a logarithmic function
+
+    &#34;&#34;&#34;
+    if not base &gt; 1:
+        raise ValueError(&#34;Base must be greater than 1&#34;)
+
+    symbolic_representation = f&#34;log{str(base)}({str(x)})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_log_domain_restrictions(x)
+
+    forward_trace = math.log(x.value, base)
+    tangent_trace = 1 / (x.value * np.log(base))
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.logistic"><code class="name flex">
+<span>def <span class="ident">logistic</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; logistic(1)
+Node(&quot;logistic(1)&quot;, 1.1752011936438014, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def logistic(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; logistic(1)
+    Node(&#34;logistic(1)&#34;, 1.1752011936438014, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;logistic({x})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.exp(-np.logaddexp(0, -x.value))
+    tangent_trace = (
+            (np.exp(-np.logaddexp(0, -x.value)))
+            * (1 - np.exp(-np.logaddexp(0, -x.value)))
+            * x.derivative
+    )
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.power"><code class="name flex">
+<span>def <span class="ident">power</span></span>(<span>base: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>], exponent: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the power
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>base</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+<dt><strong><code>exponent</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; power(3,2)
+Node(&quot;3**2&quot;, 9, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def power(base: Union[int, float, Node], exponent: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the power
+    of the input node x.
+
+    Parameters
+    ----------
+    base : Union[int, float, Node]
+    exponent : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; power(3,2)
+    Node(&#34;3**2&#34;, 9, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;({base}**{exponent})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    base = Node._convert_numeric_type_to_node(base)
+
+    return base ** exponent</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.sin"><code class="name flex">
+<span>def <span class="ident">sin</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the sine
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; sin(Node(&quot;1&quot;,1,0))
+Node(&quot;sin(1)&quot;, 0.8415, 0)
+&gt;&gt;&gt; sin(Node(&quot;0&quot;,0,0))
+Node(&quot;sin(0)&quot;, 0, 0)
+&gt;&gt;&gt; sin(Node(&quot;-1&quot;,-1,0))
+Node(&quot;sin(-1)&quot;, -0.8415, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sin(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the sine
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; sin(Node(&#34;1&#34;,1,0))
+    Node(&#34;sin(1)&#34;, 0.8415, 0)
+    &gt;&gt;&gt; sin(Node(&#34;0&#34;,0,0))
+    Node(&#34;sin(0)&#34;, 0, 0)
+    &gt;&gt;&gt; sin(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;sin(-1)&#34;, -0.8415, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;sin({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.sin(x.value)
+    tangent_trace = np.cos(x.value) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.sinh"><code class="name flex">
+<span>def <span class="ident">sinh</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the sinh
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; sinh(1)
+Node(&quot;sinh(1)&quot;, 1.1752011936438014, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sinh(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the sinh
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+
+    Examples
+    --------
+    &gt;&gt;&gt; sinh(1)
+    Node(&#34;sinh(1)&#34;, 1.1752011936438014, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;sinh({x})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.sinh(x.value)
+    tangent_trace = np.cosh(x.value) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.sqrt"><code class="name flex">
+<span>def <span class="ident">sqrt</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based of the square
+root of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; sqrt(Node(&quot;1&quot;,1,0))
+Node(&quot;sqrt(1)&quot;, 1, 0)
+&gt;&gt;&gt; sqrt(Node(&quot;0&quot;,0,0))
+Node(&quot;sqrt(0)&quot;, 0, 0)
+&gt;&gt;&gt; sqrt(Node(&quot;-1&quot;,-1,0))
+ValueError: Square roots of negative numbers not supported
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def sqrt(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based of the square
+    root of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; sqrt(Node(&#34;1&#34;,1,0))
+    Node(&#34;sqrt(1)&#34;, 1, 0)
+    &gt;&gt;&gt; sqrt(Node(&#34;0&#34;,0,0))
+    Node(&#34;sqrt(0)&#34;, 0, 0)
+    &gt;&gt;&gt; sqrt(Node(&#34;-1&#34;,-1,0))
+    ValueError: Square roots of negative numbers not supported
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;sqrt({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_sqrt_domain_restrictions(x)
+
+    forward_trace = np.sqrt(x.value)
+    tangent_trace = x.derivative / (2 * np.sqrt(x.value))
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.tan"><code class="name flex">
+<span>def <span class="ident">tan</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the tangent
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; tan(Node(&quot;1&quot;,1,0))
+Node(&quot;tan(1)&quot;, 1.557, 0)
+&gt;&gt;&gt; tan(Node(&quot;0&quot;,0,0))
+Node(&quot;tan(0)&quot;, 0, 0)
+&gt;&gt;&gt; tan(Node(&quot;-1&quot;,-1,0))
+Node(&quot;tan(-1)&quot;, -1.557, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tan(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the tangent
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+    Examples
+    --------
+    &gt;&gt;&gt; tan(Node(&#34;1&#34;,1,0))
+    Node(&#34;tan(1)&#34;, 1.557, 0)
+    &gt;&gt;&gt; tan(Node(&#34;0&#34;,0,0))
+    Node(&#34;tan(0)&#34;, 0, 0)
+    &gt;&gt;&gt; tan(Node(&#34;-1&#34;,-1,0))
+    Node(&#34;tan(-1)&#34;, -1.557, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = &#34;tan({})&#34;.format(str(x))
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    _check_tan_domain_restrictions(x)
+
+    forward_trace = np.tan(x.value)
+    tangent_trace = x.derivative / (np.cos(x.value) ** 2)
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+<dt id="autodiff_team29.elementaries.tanh"><code class="name flex">
+<span>def <span class="ident">tanh</span></span>(<span>x: Union[int, float, <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a>]) ‑> <a title="autodiff_team29.node.Node" href="node.html#autodiff_team29.node.Node">Node</a></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Takes in an instance of the Node class and returns a new node with its symbolic
+representation, forward trace, and tangent trace, which are based on the
+of the input node x.</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>x</code></strong> :&ensp;<code>Union[int, float, Node]</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>Node</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<h2 id="examples">Examples</h2>
+<pre><code class="language-python-repl">&gt;&gt;&gt; tanh(1)
+Node(&quot;tanh(1)&quot;, 0.76159415595, 0)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def tanh(x: Union[int, float, Node]) -&gt; Node:
+    &#34;&#34;&#34;
+    Takes in an instance of the Node class and returns a new node with its symbolic
+    representation, forward trace, and tangent trace, which are based on the
+    of the input node x.
+
+    Parameters
+    ----------
+    x : Union[int, float, Node]
+
+    Returns
+    -------
+    Node
+
+
+    Examples
+    --------
+    &gt;&gt;&gt; tanh(1)
+    Node(&#34;tanh(1)&#34;, 0.76159415595, 0)
+
+    &#34;&#34;&#34;
+    symbolic_representation = f&#34;tanh({x})&#34;
+    if Node._check_node_exists(symbolic_representation):
+        return Node._get_existing_node(symbolic_representation)
+
+    x = Node._convert_numeric_type_to_node(x)
+
+    forward_trace = np.tanh(x.value)
+    tangent_trace = (1 - np.tanh(x.value) ** 2) * x.derivative
+    new_node = Node(symbolic_representation, forward_trace, tangent_trace)
+
+    return new_node</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="autodiff_team29" href="index.html">autodiff_team29</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="autodiff_team29.elementaries.arccos" href="#autodiff_team29.elementaries.arccos">arccos</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.arcsin" href="#autodiff_team29.elementaries.arcsin">arcsin</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.arctan" href="#autodiff_team29.elementaries.arctan">arctan</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.cos" href="#autodiff_team29.elementaries.cos">cos</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.cosh" href="#autodiff_team29.elementaries.cosh">cosh</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.exp" href="#autodiff_team29.elementaries.exp">exp</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.ln" href="#autodiff_team29.elementaries.ln">ln</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.log" href="#autodiff_team29.elementaries.log">log</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.logistic" href="#autodiff_team29.elementaries.logistic">logistic</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.power" href="#autodiff_team29.elementaries.power">power</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.sin" href="#autodiff_team29.elementaries.sin">sin</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.sinh" href="#autodiff_team29.elementaries.sinh">sinh</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.sqrt" href="#autodiff_team29.elementaries.sqrt">sqrt</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.tan" href="#autodiff_team29.elementaries.tan">tan</a></code></li>
+<li><code><a title="autodiff_team29.elementaries.tanh" href="#autodiff_team29.elementaries.tanh">tanh</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
