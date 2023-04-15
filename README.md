@@ -10,10 +10,10 @@
 
 ## Testing
 
-<a href="https://github.com/kanenorman/derivative-dilemma/actions/workflows/run_tests.yml"> ![run test](https://github.com/kanenorman/derivative-dilemma/actions/workflows/run_tests.yml/badge.svg?event=push) </a>
-<a href="https://github.com/kanenorman/derivative-dilemma/actions/workflows/code_coverage.yml"> ![code coverage](https://github.com/kanenorman/derivative-dilemma/actions/workflows/code_coverage.yml/badge.svg?event=push) </a>
+<a href="https://github.com/andrewsully/Automatic-Differentiation-Package/actions/workflows/run_tests.yml"> ![run test](https://github.com/andrewsully/Automatic-Differentiation-Package/actions/workflows/run_tests.yml/badge.svg?event=push) </a>
+<a href="https://github.com/andrewsully/Automatic-Differentiation-Package/actions/workflows/code_coverage.yml"> ![code coverage](https://github.com/andrewsully/Automatic-Differentiation-Package/actions/workflows/code_coverage.yml/badge.svg?event=push) </a>
 
-[Coverage Report](https://kanenorman.github.io/derivative-dilemma/)
+[Coverage Report](https://andrewsully.github.io/derivative-dilemma/)
 
 ## License
 ![PyPi license](https://badgen.net/pypi/license/pip/)
@@ -28,7 +28,7 @@ python -m pip install --extra-index-url=https://test.pypi.org/simple/ alpha-delt
 
 (alternatively clone the repository)
 ```angular2html
-git clone git@github.com:kanenorman/derivative-dilemma.git
+git clone git@github.com:andrewsully/Automatic-Differentiation-Package.git
 ```
 
 ### Public Interface (Documentation Reference)
