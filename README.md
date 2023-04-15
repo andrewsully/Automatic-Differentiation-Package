@@ -34,7 +34,7 @@ git clone git@github.com:kanenorman/derivative-dilemma.git
 ### Public Interface (Documentation Reference)
 Please refer to the full [API reference](https://cs107-team29.000webhostapp.com/index.html) 
 
-*Please note, we are hosting this via a free service that does experience temporary disruptuons. If having difficulties please refer to the HTML files located [in the repository](https://github.com/kanenorman/derivative-dilemma/tree/main/docs/docs_htmls)*
+*Please note, we are hosting this via a free service that does experience temporary disruptuons. If having difficulties please refer to the HTML files located [in the repository](https://github.com/andrewsully/Automatic-Differentiation-Package/tree/main/docs/docs_htmls)*
 
 
 ## Introduction
