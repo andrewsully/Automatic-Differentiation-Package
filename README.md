@@ -1,11 +1,11 @@
 # Automatic Differentiation
 
 ## Authors:
-> [Andrew Sullivan](https://code.harvard.edu/ans8957)  
-> [Evan Arnold](https://code.harvard.edu/eva869).   
-> [James Liounis](https://code.harvard.edu/jal9597).   
-> [Kane Norman](https://code.harvard.edu/kan108).   
-> [Luke Stoner](https://code.harvard.edu/lus881).   
+> Andrew Sullivan
+> Evan Arnold
+> James Liounis
+> Kane Norman 
+> Luke Stoner
 
 
 ## Testing
