@@ -1,11 +1,11 @@
 # Automatic Differentiation
 
 ## Authors:
-> Andrew Sullivan
-> Evan Arnold
-> James Liounis
-> Kane Norman 
-> Luke Stoner
+- Andrew Sullivan
+- Evan Arnold
+- James Liounis
+- Kane Norman 
+- Luke Stoner
 
 
 ## Testing
