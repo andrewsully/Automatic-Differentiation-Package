@@ -13,7 +13,7 @@
 <a href="https://github.com/andrewsully/Automatic-Differentiation-Package/actions/workflows/run_tests.yml"> ![run test](https://github.com/andrewsully/Automatic-Differentiation-Package/actions/workflows/run_tests.yml/badge.svg?event=push) </a>
 <a href="https://github.com/andrewsully/Automatic-Differentiation-Package/actions/workflows/code_coverage.yml"> ![code coverage](https://github.com/andrewsully/Automatic-Differentiation-Package/actions/workflows/code_coverage.yml/badge.svg?event=push) </a>
 
-[Coverage Report](https://andrewsully.github.io/derivative-dilemma/)
+[Coverage Report](https://andrewsully.github.io/Automatic-Differentiation-Package/)
 
 ## License
 ![PyPi license](https://badgen.net/pypi/license/pip/)
